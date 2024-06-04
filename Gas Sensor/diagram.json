@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "author": "Uri Shaked",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-mini", "id": "bb1", "top": -164.6, "left": 160.8, "attrs": {} },
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 19.8, "left": -0.6, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd",
+      "top": 35.2,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": -224.4,
+      "left": 291.8,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr2",
+      "top": -35.4,
+      "left": 430,
+      "rotate": 180,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -170.4,
+      "left": 40.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": -224.4,
+      "left": 339.8,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led3",
+      "top": -224.4,
+      "left": 397.4,
+      "attrs": { "color": "blue" }
+    }
+  ],
+  "connections": [
+    [ "uno:GND.2", "lcd:GND", "black", [ "v17", "*", "h-20" ] ],
+    [ "uno:A4", "lcd:SDA", "green", [ "v28", "*", "h-12" ] ],
+    [ "uno:A5", "lcd:SCL", "blue", [ "v35", "*", "h-8" ] ],
+    [ "ldr2:AO", "uno:A1", "cyan", [ "h0" ] ],
+    [ "ldr2:GND", "uno:GND.3", "black", [ "h0" ] ],
+    [ "uno:13", "bz1:2", "purple", [ "v0" ] ],
+    [ "led1:C", "bb1:11b.f", "blue", [ "v0" ] ],
+    [ "uno:GND.1", "bb1:11b.j", "#8f4814", [ "v0" ] ],
+    [ "led2:C", "bb1:11b.g", "blue", [ "v0" ] ],
+    [ "led3:C", "bb1:11b.h", "blue", [ "v0" ] ],
+    [ "led1:A", "bb1:17t.a", "red", [ "v0" ] ],
+    [ "uno:7", "bb1:17t.e", "green", [ "v0" ] ],
+    [ "led2:A", "bb1:17t.b", "red", [ "v0" ] ],
+    [ "led3:A", "bb1:17t.c", "red", [ "v0" ] ],
+    [ "ldr2:VCC", "bb1:8b.i", "red", [ "h0" ] ],
+    [ "uno:5V", "bb1:8b.h", "red", [ "v0" ] ],
+    [ "lcd:VCC", "bb1:8b.g", "red", [ "h0" ] ],
+    [ "bz1:1", "bb1:11b.i", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
